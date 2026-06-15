@@ -1,7 +1,7 @@
 [project]
 name = "pycodemap"
 version = "0.1.0"
-description = "TUI para visualizar diagramas de código fuente en tiempo real con IA."
+description = "A real-time TUI for visualizing source code diagrams with AI-powered architectural summaries."
 license = "MIT"
 authors = [
     { name = "Carlos A. Crespo", email = "lvccrespo@gmail.com" }
