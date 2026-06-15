@@ -30,6 +30,15 @@ class CodeAnalyzer:
             return nx.DiGraph()
 
         v = analyzer.CallGraphVisitor(files, root=self.root_path)
+        
+        # Monkey-patching the problematic method
+        original_get_parent_node = v.get_parent_node
+        def patched_get_parent_node(graph_node):
+            if graph_node.namespace is None:
+                return None
+            return original_get_parent_node(graph_node)
+        v.get_parent_node = patched_get_parent_node
+
         v.process()
         
         G = nx.DiGraph()
