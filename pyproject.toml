@@ -1,0 +1,35 @@
+[project]
+name = "pycodemap"
+version = "0.1.0"
+description = "TUI para visualizar diagramas de código fuente en tiempo real con IA."
+license = "MIT"
+authors = [
+    { name = "Carlos A. Crespo", email = "lvccrespo@gmail.com" }
+]
+dependencies = [
+    "google-genai>=2.8.0",
+    "networkx>=3.4.2",
+    "phart>=1.1.4",
+    "pyan3>=2.6.0",
+    "pyflowchart>=0.6.0",
+    "python-dotenv>=1.2.2",
+    "textual>=8.2.7",
+    "watchdog>=6.0.0",
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.urls]
+Homepage = "https://github.com/cacrespo/pycodemap"
+Repository = "https://github.com/cacrespo/pycodemap"
+Issues = "https://github.com/cacrespo/pycodemap/issues"
+
+[project.scripts]
+pycodemap = "pycodemap.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pycodemap"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
